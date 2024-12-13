@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InventarioPRO</title>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="/panel/css/home.css">
+</head>
+
+<body  >
+ 
+   <!-- Main -->
+   <main class="main-container">
+     <header class="header">
+      
+         <h2>InventarioPRO</h2>
+       <p class="slogan">Gestión de inventarios, proveedores y alertas en un solo lugar</p>
+     </header>
+
+    <div class="main-cards">
+
+      <div class="card">
+        <div class="card-inner">
+          <h3>PRODUCTOS</h3>
+          <span class="material-icons-outlined">inventory_2</span>
+        </div>
+        <h1>249</h1>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <h3>CATEGORIA</h3>
+          <span class="material-icons-outlined">category</span>
+        </div>
+        <h1>25</h1>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <h3>PROVEDORES</h3>
+          <span class="material-icons-outlined">groups</span>
+        </div>
+        <h1>1500</h1>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <h3>ALERTAS</h3>
+          <span class="material-icons-outlined">notification_important</span>
+        </div>
+        <h1>56</h1>
+      </div>
+
+    </div>
+
+    <div class="charts">
+
+      <div class="charts-card">
+        <h2 class="chart-title">Top 5 Productos</h2>
+        <div id="bar-chart"></div>
+      </div>
+
+      <div class="charts-card">
+        <h2 class="chart-title">Órdenes de compra y venta</h2>
+        <div id="area-chart"></div>
+      </div>
+
+    </div>
+  </main>
+  <!-- End Main -->
+
+</div>
+<!-- ApexCharts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+  <script src="/panel/js/home.js"></script>
+
+        </body>
+</html>

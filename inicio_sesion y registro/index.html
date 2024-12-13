@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Formulario de inicio de sesión y registro</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form id="login" class="sign-in-form">
+            <h2 class="title">Inicia Sesión</h2>
+            <div class="input-field">
+              <i class="bi bi-person"></i>
+              <input
+                type="text"
+                placeholder="Nombre de usuario"
+                name="username"
+                id="username"
+                 
+              />
+            </div>
+            <div class="input-field">
+              <i class="bi bi-lock"></i>
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                id="password"
+                 
+              />
+            </div>
+            <button class="btn" type="submit">
+              <div class="icono">
+                <i class="bi bi-arrow-right"></i>
+              </div>
+              <span>Iniciar</span>
+            </button>
+            <p class="social-text">O Iniciar sesión con plataformas sociales</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="bi bi-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </form>
+          <form id="registro" class="sign-up-form">
+            <h2 class="title">Registrarse</h2>
+            <div class="input-field">
+              <i class="bi bi-person"></i>
+              <input
+                type="text"
+                placeholder="Nombre completo"
+                name="username"
+                id="registerUsername"
+                 
+              />
+            </div>
+            <div class="input-field">
+              <i class="bi bi-envelope"></i>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                id="registerEmail"
+                 
+              />
+            </div>
+            <div class="input-field">
+              <i class="bi bi-lock"></i>
+              <input
+                type="password"
+                placeholder="Contraseña"
+                name="password"
+                id="registerPassword"
+                 
+              />
+            </div>
+            <div class="input-field">
+              <i class="bi bi-lock"></i>
+              <input
+                type="password"
+                placeholder="Confrmar contraseña"
+                name="password"
+                id="confirmPassword"
+                 
+              />
+            </div>
+            <div class="input-field">
+              <i class="bi bi-telephone"></i>
+              <input
+                type="tel"
+                placeholder="Teléfono/celular"
+                name="phone"
+                id="registerPhone"
+                 
+              />
+            </div>
+            <button class="btn" type="submit">
+              <div class="icono">
+                <i class="bi bi-arrow-right"></i>
+              </div>
+              <span>Registrarse</span>
+            </button>
+            <input
+              type="checkbox"
+              class="checkbox"
+              id="terminos"
+              name="terminos"
+               required
+            />
+            <label for="terminos">Aceptas términos y condiciones</label>
+            <p class="social-text">O regístrate con plataformas sociales</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="bi bi-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <! modal de error->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modalMessage"></p>
+     <!-- Ícono de error -->
+     <i id="modalIcon" class="bi bi-exclamation-circle"></i>
+  </div>
+</div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>¿Nuevo aquí?</h3>
+            <p>
+              Únete a InventarioPRO y empieza a gestionar tus inventarios de
+              manera eficiente. ¡Regístrate ahora y descubre todas nuestras
+              funcionalidades!
+            </p>
+            <button class="btn2" id="sign-up-btn">
+              <span>Registrarse</span>
+            </button>
+          </div>
+          <img src="img/log.svg" class="image" alt="Log" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>¿Ya eres parte de nosotros?</h3>
+            <p>
+              Inicia sesión para acceder a tu cuenta y continuar gestionando tus
+              inventarios con InventarioPRO. ¡Estamos contentos de tenerte de
+              vuelta!
+            </p>
+            <button class="btn2" id="sign-in-btn">
+              <span>Iniciar sesión</span>
+            </button>
+          </div>
+          <img src="img/register.svg" class="image" alt="Register" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

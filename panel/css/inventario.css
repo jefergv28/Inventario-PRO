@@ -1,0 +1,513 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: #f29727;
+  --hoverColor: #242526;
+  --color1: #eee9e2;
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919199;
+  --lightTwo: #7b7a7c;
+  --lightTre: #f2d6bd;
+  --ligthfor: #192e39;
+  --ligthfive: #d3d3d3;
+  --color-switch-base: #7b7a7c;
+  --color-switch-circilo: #f29727;
+}
+
+.dark-mode {
+  --mainColor: #f29727;
+  /* Mantener el color principal si es necesario */
+  --hoverColor: #7b7a7c;
+  /* Un color más oscuro para los efectos hover */
+  --color1: #192e3a;
+  /* Un color oscuro, pero no completamente negro */
+  --darkOne: #2b2b2b;
+  /* Fondo principal oscuro */
+  --darkTwo: #3a3a3a;
+  /* Un tono un poco más claro para secciones */
+  --lightOne: #f2d6bd;
+  /* Un color claro para texto o detalles */
+  --lightTwo: #c7c7c7;
+  /* Un tono más oscuro para detalles menores */
+  --lightTre: #4a5468;
+  /* Un color de acento más oscuro */
+  --ligthfor: #ffffff;
+  /* Tono más oscuro */
+  --ligthfive: #fff;
+  /* Color para el titulos */
+  --color-switch-base: #f2d6bd;
+  --color-switch-circilo: #f29727;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  background:#000;
+}
+
+
+/* ---------- MAIN ---------- */
+
+/* styles.css */
+
+main {
+  background-color: var(--lightTre);
+  width: 100%;
+
+}
+
+.container {
+  width: 90%;
+  margin: 25px auto;
+  overflow: hidden;
+}
+
+header {
+  background-image: url(/panel/img/fonfo-inv.svg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  color: var(--ligthfive);
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Overlay oscuro */
+  z-index: -1;
+  /* Agregar al fondo */
+  border-radius: 15px;
+}
+
+.inv-svg {
+  position: relative;
+  top: -10px;
+  right: 800px;
+  width: 200px;
+  height: 200px;
+
+}
+
+header h1 {
+  margin: 15px;
+  font-size: 3em;
+}
+
+.bx {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#openModalBtn {
+  background: var(--mainColor);
+  color: var(--ligthfor);
+  font-size: 20px;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 15px;
+  border: 2px solid var(--ligthfor);
+
+}
+
+#openModalBtn:hover {
+  background: var(--lightTre);
+  border: none;
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 870px) {
+  .container {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .inv-svg {
+    width: 150px;
+    height: 150px;
+    top: 0;
+    right: 0;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  #openModalBtn {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 5px 0;
+  }
+
+  .inv-svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  #openModalBtn {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
+
+.inventory-list {
+  background: var(--color1);
+  padding: 20px;
+  margin-bottom: 20px;
+  color: var(--ligthfor);
+  border-radius: 15px;
+}
+
+.inventory-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventory-list table,
+th,
+td {
+  border: 2px solid #c5c5c5;
+  text-align: left;
+  padding: 8px;
+}
+
+.inventory-list th {
+  background: var(--darkTwo);
+  color:#fff;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.modal-content {
+  background-color: var(--lightTwo);
+  border-radius: 15px;
+  margin: 15% auto;
+  color: var(--color1);
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content h2 {
+  color: var(--darkTwo);
+}
+
+.close-btn {
+  color: var(--ligthfor);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content input,
+select {
+  display: block;
+  width: 80%;
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  outline: none;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: var(--lightTre);
+  transition: background-color 0.3s;
+  border-bottom: 2px solid var(--darkTwo);
+  color: var(--mainColor);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: var(--darkTwo);
+}
+
+textarea {
+  width: 80%;
+  margin-left: 20px;
+  padding: 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  outline: none;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: var(--lightTre);
+  transition: background-color 0.3s;
+  border-bottom: 2px solid var(--darkTwo);
+  color: var(--mainColor);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--darkTwo);
+  transition: background-color 0.3s;
+}
+
+
+label {
+  margin: 20px;
+  padding: 10px;
+  font-weight: 500;
+  margin-bottom: -5px;
+}
+.error{
+  color: var(--ligthfor);
+  display: nones;
+  font-size: 15px;
+}
+
+.button-modal {
+  background: var(--lightTre);
+  color: var(--ligthfor);
+  left: 20px;
+  font-size: 15px;
+  border-radius: 15px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.button-modal .bi {
+  pointer-events: none;
+}
+
+.button-modal .bi.bi-star-fill {
+  color: var(--color-switch-circilo)
+}
+
+.button-modal:hover {
+  color: var(--color1);
+  background: var(--mainColor);
+}
+
+
+.inventory-name {
+  display: inline-flex;
+  align-items: flex-end;
+  top: 20px;
+  gap: 10px;
+  font-weight: 500;
+  margin-left: 30px;
+  /* Espacio entre el texto y el icono */
+}
+
+/* Estilo general para los botones de acción */
+.edit-btn, .delete-btn, .favorite-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2em; /* Aumentar el tamaño de los íconos */
+  padding: 5px;
+  margin: 0 5px;
+}
+.favorite-btn:hover,
+.edit-btn:hover
+.delete-btn:hover{
+  transform: scale(1.2);
+}
+/* Estilo para el ícono de modificar */
+.edit-btn i {
+  color:var(--mainColor)
+}
+
+.edit-btn:hover i {
+  color: #45a049; 
+}
+
+/* Estilo para el ícono de eliminar */
+.delete-btn i {
+  color: var(--mainColor)
+}
+
+.delete-btn:hover i {
+  color: #e53935; /* Rojo oscuro al pasar el mouse */
+}
+
+/* Estilo para el ícono de favorito (no-favorito) */
+.favorite-btn i.bi-heart {
+  color: #ffc107; /* Amarillo */
+}
+
+.favorite-btn:hover i.bi-heart {
+  color: #ffb300; /* Amarillo oscuro al pasar el mouse */
+}
+
+/* Estilo para el ícono de favorito (favorito) */
+.favorite-btn i.bi-heart-fill {
+  color: #ff0000; /* Rojo */
+}
+
+/* Estilo para el ícono de favorito en el nombre del inventario */
+.favorito-en-nombre {
+  color: #ff0000; /* Rojo */
+  margin-left: 5px; /* Espacio al final del nombre */
+}
+
+
+
+/* ---------- MEDIA QUERIES ---------- */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #openModalBtn {
+    position: static;
+    margin-top: 10px;
+    transform: none;
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  th,
+  td {
+    font-size: 0.9em;
+    padding: 6px;
+  }
+
+  label,
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+
+
+  .modal-content {
+    width: 95%;
+  }
+
+  th,
+  td {
+    font-size: 0.8em;
+    padding: 4px;
+
+  }
+
+  label,
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 0.8em;
+  }
+}
+
+
+
+
+/* Medium <= 992px */
+
+@media screen and (max-width: 992px) {
+
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title>span {
+    display: inline;
+  }
+}
+
+/* Small <= 768px */
+
+@media screen and (max-width: 768px) {}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+ 
+}
+

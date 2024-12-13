@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Productos</title>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/panel/css/producto.css" />
+  </head>
+
+  <body>
+    <!-- Main -->
+    <main>
+      <div class="container">
+        <header class="header-prod">
+          <img
+            class="product"
+            src="/panel/img/producto-logo.svg"
+            alt="producto"
+          />
+          <h1>Productos</h1>
+          <button id="openProductModalBtn">Agregar Producto</button>
+        </header>
+        <section class="product-list">
+          <h2>Lista de Productos</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Descripción</th>
+                <th>Inventario</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí se llenarán los productos -->
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <!-- Modal -->
+      <div id="productModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2>Agregar Producto</h2>
+          <form id="productForm">
+            <label for="productName">Nombre del Producto:</label>
+            <input type="text" id="productName" name="productName" />
+            <label for="productCategory">Categoría:</label>
+            <select id="productCategory" name="productCategory">
+              <option value="electronica">Electrónica</option>
+              <option value="hogar_cocina">Hogar y Cocina</option>
+              <option value="ropa_accesorios">Ropa y Accesorios</option>
+              <option value="salud_belleza">Salud y Belleza</option>
+              <option value="libros_medios">Libros y Medios</option>
+              <option value="juguetes_juegos">Juguetes y Juegos</option>
+              <option value="deportes_aire_libre">Deportes y Aire Libre</option>
+              <option value="automoviles_herramientas">
+                Automóviles y Herramientas
+              </option>
+              <option value="alimentos_bebidas">Alimentos y Bebidas</option>
+              <option value="mascotas">Mascotas</option>
+              <!-- Más opciones -->
+            </select>
+            <label for="productQuantity">Cantidad:</label>
+            <input
+              type="number"
+              id="productQuantity"
+              name="productQuantity"
+              required
+            />
+            <label for="productPrice">Precio:</label>
+            <input
+              type="number"
+              id="productPrice"
+              name="productPrice"
+              required
+            />
+            <label for="productDescription">Descripción:</label>
+            <textarea
+              id="productDescription"
+              name="productDescription"
+              required
+            ></textarea>
+            <label for="inventorySelect">Seleccionar Inventario:</label>
+            <select id="inventorySelect" name="inventorySelect">
+              <!--opciones de prueba  -->
+              <option value="">inventario1</option>
+              <option value="">inventario1</option>
+              <option value="">inventario1</option>
+              <!-- Más opciones desde la otra interfaz -->
+            </select>
+            <button type="submit">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <div id="confirmationMessage" class="hidden"></div>
+    <!-- End Main -->
+
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+    <script src="/panel/js/productos.js"></script>
+  </body>
+</html>

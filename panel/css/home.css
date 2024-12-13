@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: #f29727;
+  --hoverColor: #242526;
+  --color1: #eee9e2;
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919199;
+  --lightTwo: #7b7a7c;
+  --lightTre: #f2d6bd;
+  --ligthfor: #192e39;
+  --color-switch-base: #7b7a7c;
+  --color-switch-circilo: #f29727;
+}
+
+.dark-mode {
+  --mainColor: #f29727;
+  /* Mantener el color principal si es necesario */
+  --hoverColor: #1b1b1b;
+  /* Un color más oscuro para los efectos hover */
+  --color1: #192e3a;
+  /* Un color oscuro, pero no completamente negro */
+  --darkOne: #2b2b2b;
+  /* Fondo principal oscuro */
+  --darkTwo: #3a3a3a;
+  /* Un tono un poco más claro para secciones */
+  --lightOne: #f2d6bd;
+  /* Un color claro para texto o detalles */
+  --lightTwo: #c7c7c7;
+  /* Un tono más oscuro para detalles menores */
+  --lightTre: #4a5468;
+  /* Un color de acento más oscuro */
+  --ligthfor: #ffffff;
+  /* Tono más oscuro */
+  --color-switch-base: #f2d6bd;
+  --color-switch-circilo: #f29727;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  min-height: 100dvh;
+  display: flex;
+  position: relative;
+  background-color: var(--color1);
+
+}
+
+/* ---------- MAIN ---------- */
+.header {
+  grid-area: header;
+  background-image: url(/panel/img/inventarioPRO.svg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-top: -130px;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Overlay oscuro */
+  z-index: -1;
+  /* Agregar al fondo */
+  border-radius: 15px;
+}
+
+.header h2 {
+  color: var(--mainColor);
+  font-size: 2.5rem;
+  padding: 25px;
+}
+
+.slogan {
+  margin-left: 10px;
+  font-size: 1.8em;
+  color: #fff;
+  padding: 0 5px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.main-container {
+  grid-area: main;
+  padding: 20px 20px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lightTre);
+  overflow: auto;
+  overflow-x: auto;
+  transition: background-color 0.3s;
+  padding-top: 140px;
+}
+
+
+
+.main-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 6px 7px 4px rgba(0, 0, 0, 0.2);
+  color: var(--ligthfor);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+  transition: transform 0.3s;
+  color: var(--mainColor)
+}
+
+.card:first-child {
+  background-color: #3498db;
+  transition: background-color 0.3s;
+  
+}
+
+.card:nth-child(2) {
+  background-color: #95a5a6;
+}
+
+.card:nth-child(3) {
+  background-color: #27ae60;
+}
+
+.card:nth-child(4) {
+  background-color: #e74c3c;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner>.material-icons-outlined {
+  font-size: 45px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.charts-card {
+  background-color: #263043;
+  margin-bottom: 20px;
+  padding: 25px;
+  box-sizing: border-box;
+  -webkit-column-break-inside: avoid;
+  border-radius: 5px;
+  box-shadow: 0 6px 7px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 15px;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    padding: 10px;
+  }
+
+  .header h2 {
+    font-size: 1.2rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title>span {
+    display: inline;
+  }
+}
+
+/* Small <= 768px */
+
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  .charts-card{
+    flex: 1 1 100%;
+    margin-bottom:20px ;
+  }
+
+  .admin-profile {
+    display: inherit;
+    /* Ajuste de posición */
+  }
+
+  .admin-profile img {
+    margin: 0 0 10px 0;
+    width: 100%;
+    max-width: 50px;
+    /* Ajuste de tamaño de imagen */
+  }
+
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .charts {
+    font-size: 0.5rem;
+    margin-right: 5px;
+  }
+  .charts-card{
+    padding: 15px;
+  }
+  .charts-card h2{
+    font-size: 1rem;
+  }
+  .hedaer-left {
+    display: none;
+  }
+  #bar-chart, #area-chart{
+    height: 300px !important;
+  }
+
+  .admin-profile {
+    padding: 5px 0;
+  }
+
+  .admin-info h3,
+  .admin-info h5 {
+    font-size: 0.9rem;
+  }
+
+  .log-out {
+    font-size: 1rem;
+    min-width: 2rem;
+  }
+}
+
+/*modo oscuro*/
+
+.hiden {
+  overflow: hidden;
+  right: 5px;
+}
+
+.modo-oscuro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  bottom: 50px;
+  height: 60px;
+  left: 10px;
+
+}
+
+.modo-oscuro .info {
+  display: flex;
+  align-items: center;
+
+}
+
+.modo-oscuro .info i {
+  margin-right: 10px;
+}
+
+.switch {
+  position: absolute;
+  width: 40px;
+  height: 25px;
+  background: var(--lightTre);
+  border-radius: 25px;
+  cursor: pointer;
+  left: 170px;
+  bottom: 22px;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+  /* Añadido transform para una transición suave */
+}
+
+.switch :hover {
+  transform: scale(1.1);
+}
+
+.circulo:hover {
+  color: var(--ligthfor);
+}
+
+.switch .base {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.switch .base .circulo {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background: var(--color-switch-circilo);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.circulo {
+  color: var(--hoverColor);
+}
+
+.switch.prendido .base {
+  background: var(--lightOne);
+}
+
+.switch.prendido .base .circulo {
+  transform: translateX(18px);
+}

@@ -1,0 +1,544 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: #f29727;
+  --hoverColor: #242526;
+  --color1: #eee9e2;
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919199;
+  --lightTwo: #7b7a7c;
+  --lightTre: #f2d6bd;
+  --ligthfor: #192e39;
+  --ligthfive: #d3d3d3;
+  --color-switch-base: #7b7a7c;
+  --color-switch-circilo: #f29727;
+}
+
+.dark-mode {
+  --mainColor: #f29727;
+  --hoverColor: #7b7a7c;
+  --color1: #192e3a;
+  --darkOne: #2b2b2b;
+  --darkTwo: #3a3a3a;
+  --lightOne: #f2d6bd;
+  --lightTwo: #c7c7c7;
+  --lightTre: #4a5468;
+  --ligthfor: #ffffff;
+  --ligthfive: #fff;
+  --color-switch-base: #f2d6bd;
+  --color-switch-circilo: #f29727;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+ 
+}
+
+/* ---------- MAIN ---------- */
+
+main {
+  width: 100%;
+  background-color: var(--lightTre);
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-image: url(/panel/img/producto.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  color: var(--ligthfive);
+  height: 240px;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: background 0.3s;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.header-prod h1 {
+  color: var(--ligthfive);
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.product {
+  width: 200px !important;
+  height: 200px;
+  margin: 20px;
+}
+
+#openProductModalBtn {
+  background: var(--mainColor);
+  color: var(--ligthfor);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 15px;
+  border: 2px solid var(--ligthfor);
+}
+
+#openProductModalBtn:hover {
+  background: var(--lightTre);
+  border: none;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.modal-content {
+  background-color: var(--lightTwo);
+  margin: 5% auto;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 15px;
+}
+
+.close-btn {
+  color: var(--hoverColor);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: red;
+  transform: scale(1.5);
+  text-decoration: none;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1em;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--hoverColor);
+  border-radius: 4px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+  background: var(--lightTre);
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  background-color: var(--darkOne);
+  color: var(--mainColor);
+}
+
+button {
+  background: #35424a;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1em;
+}
+
+button:hover {
+  background: #25333d;
+}
+
+.product-list h2 {
+  padding: 10px;
+  color: var(--ligthfor);
+}
+
+.product-list {
+  background: var(--color1);
+  padding: 20px;
+  margin-bottom: 20px;
+  color: var(--ligthfor);
+  border-radius: 15px;
+}
+
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-list th,
+.product-list td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.product-list th {
+  background: #35424a;
+  color: #ffffff;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+@media (max-width: 992px) {
+  header {
+    padding: 15px;
+  }
+
+  .header-prod h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-prod button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .product-list table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .header-prod h1 {
+    font-size: 1.2rem;
+  }
+
+  #openProductModalBtn {
+    position: relative;
+    top: auto;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  .product {
+    width: 150px !important;
+    height: 150px;
+    margin: 10px 0;
+  }
+
+  .product-list table {
+    font-size: 0.8rem;
+  }
+
+  .product-list th,
+  .product-list td {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-prod h1 {
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .product-list table {
+    font-size: 0.7rem;
+  }
+
+  .product-list th,
+  .product-list td {
+    padding: 4px;
+  }
+
+  label,
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 0.8em;
+  }
+}
+
+/* Modo oscuro */
+
+.hiden {
+  overflow: hidden;
+  right: 5px;
+}
+
+.modo-oscuro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  bottom: 50px;
+  height: 60px;
+  left: 10px;
+}
+
+.modo-oscuro .info {
+  display: flex;
+  align-items: center;
+}
+
+.modo-oscuro .info i {
+  margin-right: 10px;
+}
+
+.switch {
+  position: absolute;
+  width: 40px;
+  height: 25px;
+  background: var(--lightTre);
+  border-radius: 25px;
+  cursor: pointer;
+  left: 170px;
+  bottom: 22px;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.switch:hover {
+  transform: scale(1.1);
+}
+
+.circulo:hover {
+  color: var(--ligthfor);
+}
+
+.switch .base {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.switch .base .circulo {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background: var(--color-switch-circilo);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.circulo {
+  color: var(--hoverColor);
+}
+
+.switch.prendido .base {
+  background: var(--lightOne);
+}
+
+.switch.prendido .base .circulo {
+  transform: translateX(18px);
+}
+/* Estilos generales para los botones de acción */
+.edit-btn, .delete-btn, .favorite-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.edit-btn:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.delete-btn:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.favorite-btn:hover {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+/* Estilos para los íconos */
+.edit-btn i, .delete-btn i, .favorite-btn i {
+  font-size: 1.5rem;
+  color: var(--mainColor);
+  transition: color 0.3s, transform 0.3s;
+}
+
+
+/* Hover effects */
+ .favorite-btn:hover i {
+  color: red;
+  transform: scale(1.2);
+}
+.edit-btn:hover i {
+  color: #48e;
+  transform: scale(1.2);
+}
+.delete-btn:hover i{
+  color: red;
+  transform: scale(1.2);
+}
+
+/* Estilos para el botón de favorito activo */
+.favorite-btn.active i {
+  color:red; /* Cambia el color del ícono a dorado cuando está activo */
+}
+
+.product-name .favorite-icon {
+  margin-left: 5px;
+  color: r; /* Color del ícono clonado */
+}
+
+/*-------------------PARA PANTALLA DE HASTA 992PX ------*/
+
+
+@media screen and (max-width: 992px) {
+  header {
+    padding: 15px;
+  }
+
+  .header-prod h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-prod button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .product-list table {
+    font-size: 0.9rem;
+  }
+}
+/*-------PARA PAANTALLAS DE HASTA 768PX------*/
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .header-prod h1 {
+    font-size: 1.2rem;
+  }
+
+  #openProductModalBtn {
+    position: relative;
+    top: auto;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  .product {
+    width: 150px !important;
+    height: 150px;
+    margin: 10px 0;
+  }
+
+  .product-list table {
+    font-size: 0.8rem;
+  }
+
+  .product-list th,
+  .product-list td {
+    padding: 6px;
+  }
+}
+/*---------para pnatallas de 576px*/
+
+
+@media (max-width: 576px) {
+  .header-prod h1 {
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .product-list table {
+    font-size: 0.8rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 90%;
+
+  }
+
+  .product-list th,
+  .product-list td {
+    padding: 4px;
+  }
+
+  label,
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 0.8em;
+  }
+}

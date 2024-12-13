@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="/panel/css/movimientos.css">
+    <title>movimientos</title>
+</head>
+
+<body>
+    <main class="main-container">
+        <header class="header">
+            <img  class="img-mov" src="/panel/img/movimientos-1.svg" alt="movimientos">
+            <h1>Historial de Movimientos</h1>
+            <p>Visualiza todas las acciones realizadas en InventarioPRO</p>
+        </header>
+        <section class="download-section">
+            <button id="downloadPdfBtn"><i class="bi bi-file-earmark-pdf"></i> Descargar PDF</button>
+            <button id="downloadExcelBtn"><i class="bi bi-file-earmark-excel"></i> Descargar Excel</button>
+          </section>
+        <section class="historial-list">
+            <h2>Lista de Movimientos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Acción</th>
+                        <th>Producto/Inventario</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- Aquí se llenarán los movimientos -->
+                </tbody>
+            </table>
+        </section>
+        <script src="/panel/js/movimientos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</body>
+
+</html>

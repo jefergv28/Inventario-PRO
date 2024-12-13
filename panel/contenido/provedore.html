@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proveedores - InventarioPRO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- Incluir Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="/panel/css/provedores.css" />
+</head>
+
+<body>
+    <section class="container">
+            <div class="panel">
+            <h1>Proveedores</h1>
+            <h3>Añadir Nuevo Proveedor</h3>
+            <form id="nuevoProveedorForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" />
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" />
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" />
+                <button type="submit">Añadir Proveedor</button>
+            </form>
+        </div>
+    </>
+   
+        <div class="panel">
+            <h3>Lista de Proveedores</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán los proveedores -->
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+    <!-- Modal de Error -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel">Error en el Formulario</h5> <button type="button"
+                        class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="errorMessage"></p>
+                </div>
+                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">Cerrar</button> </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 InventarioPRO. Todos los derechos reservados.</p>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="/panel/js/provedores.js"></script>
+</body>
+
+</html>
