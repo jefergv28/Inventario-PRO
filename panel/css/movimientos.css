@@ -108,15 +108,15 @@ body {
   padding: 10px;
   border: 2px solid var(--ligthfor);
   text-align: left;
-  color:var(--ligthfive);
+  color:var(--ligthfor);
 }
 
 .historial-list th {
-  background-color:var(--darkOne);
+  background-color:var(--color1);
 }
 
 .historial-list td {
-  background-color:var(--lightTwo);
+  background-color:var(--lightTre);
 }
 
 .download-section {

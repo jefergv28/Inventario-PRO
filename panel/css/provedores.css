@@ -21,6 +21,7 @@
   --ligthfive: #242e39;
   --color-switch-base: #7b7a7c;
   --color-switch-circilo: #f29727;
+  --successColor: #6dbe45; /* Verde que combina con la paleta */
 }
 
 .dark-mode {
@@ -49,211 +50,312 @@
 
 /* Estilos generales */
 
-  body{
-    background-color: var(--lightTre);
-  }
-  .container {
-    flex: 1;
-    max-width: 80%;
-    margin: 35px;
-    padding: 20px;
-    padding-top: 20px;
-    
-   
+body {
+  background-color: var(--lightTre);
+}
+.container {
+  flex: 1;
+  max-width: 80%;
+  margin: 35px;
+  padding: 20px;
+  padding-top: 20px;
+}
+
+.panel {
+  background-color: var(--lightTwo);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px -3px rgba(70, 46, 118, 0.3);
+}
+
+.panel h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--ligthfive);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border: 1px solid var(--darkTwo);
+  text-align: left;
+}
+
+.table th {
+  background-color: var(--darkOne);
+  color: var(--lightOne);
+}
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-favorite {
+  color: #dc3545;
+}
+
+.btn-favorite.active {
+  color: #d9534f;
+}
+.btn-favorite:hover {
+  color: #fff;
+}
+.btn i {
+  font-size: 1.2rem;
+}
+/* Estilo base para los inputs */
+label {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--darkOne);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  width: 20%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid var(--lightOne);
+  border-radius: 8px;
+  background-color: var(--color1);
+  color: var(--ligthfor);
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo cuando el input está enfocado */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus {
+  border-color: var(--mainColor);
+  box-shadow: 0 0 8px var(--mainColor);
+  outline: none;
+  color: var(--ligthfor);
+}
+
+/* Estilo de los placeholders */
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="email"]::placeholder {
+  color: var(--lightTwo);
+}
+
+/* Estilo para los botones */
+button {
+  padding: 10px 20px;
+  background-color: var(--mainColor);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hoverColor);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Estilos para el modal de error */
+.modal-title {
+  font-size: 24px;
+  color: var(--mainColor);
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.modal-content {
+  background: var(--lightTwo);
+  padding: 20px;
+  border: 1px solid var(--darkTwo);
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 50px auto;
+}
+.modal-footer button {
+  padding: 10px 20px;
+  background-color: var(--mainColor);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.modal-body p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--darkOne);
+}
+/* Ocultar el pie de página cuando el modal está abierto */
+
+/* Estilos de responsividad */
+@media (max-width: 992px) {
+  .panel {
+    padding: 15px;
   }
 
-  
-  .panel {
-    background-color: var(--lightTwo);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px -3px rgba(70, 46, 118, 0.3);
-   
-  }
-  
   .panel h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--ligthfive);
+    font-size: 1.3rem;
   }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+
+  .table th,
+  .table td {
+    padding: 8px;
   }
-  
-  .table th, .table td {
+
+  .btn {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel {
     padding: 10px;
-    border: 1px solid var(--darkTwo);
-    text-align: left;
   }
-  
-  .table th {
-    background-color: var(--darkOne);
-    color: var(--lightOne);
+
+  .panel h3 {
+    font-size: 1.1rem;
   }
-  
+
+  .table th,
+  .table td {
+    padding: 6px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .panel {
+    padding: 5px;
+  }
+
+  .panel h3 {
+    font-size: 1rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 5px;
+  }
+
   .btn {
     padding: 5px 10px;
-    border: none;
-    cursor: pointer;
   }
-  
-  .btn-danger {
-    color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
-  
-  .btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .btn-favorite {
-    color: #dc3545;
-  }
-  
-  .btn-favorite.active {
-    color: #d9534f;
-  }
-  
-  .btn i {
-    font-size: 1.2rem;
-  }
-  
-  /* Estilos para el modal de error */
-  .modal-body p {
-    margin: 0;
-    font-size: 1rem;
-    color: var(--darkOne);
-  }
-  
-  /* Estilos de responsividad */
-  @media (max-width: 992px) {
-    .panel {
-      padding: 15px;
-    }
-  
-    .panel h3 {
-      font-size: 1.3rem;
-    }
-  
-    .table th, .table td {
-      padding: 8px;
-    }
-  
-    .btn {
-      padding: 8px 16px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .panel {
-      padding: 10px;
-    }
-  
-    .panel h3 {
-      font-size: 1.1rem;
-    }
-  
-    .table th, .table td {
-      padding: 6px;
-    }
-  
-    .btn {
-      padding: 6px 12px;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .panel {
-      padding: 5px;
-    }
-  
-    .panel h3 {
-      font-size: 1rem;
-    }
-  
-    .table th, .table td {
-      padding: 5px;
-    }
-  
-    .btn {
-      padding: 5px 10px;
-    }
-  }
-  
+}
+
+/* Footer siempre en la parte inferior, pero inicialmente visible */
+/* Establecer el footer en la parte inferior */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #242526;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+/* Ocultar el footer cuando el modal esté abierto */
+footer.hidden {
+  transform: translateY(100%);
+}
+
+
+/* Opcional: puedes agregar algo de sombra o cambiar la apariencia del modal */
+.modal {
+  z-index: 1050; /* El modal tiene un z-index mayor para aparecer encima del footer */
+}
+
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--lightOne);
+}
+
+footer a {
+  color: var(--mainColor);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--hoverColor);
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
   footer {
-    background-color: var(--darkOne);
-    color: var(--lightTre);
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    margin-top: auto;
+    padding: 15px 0;
   }
-  
+
   footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: var(--lightOne);
+    font-size: 0.9rem;
   }
-  
+
   footer a {
-    color: var(--mainColor);
-    text-decoration: none;
+    font-size: 0.9rem;
   }
-  
-  footer a:hover {
-    color: var(--hoverColor);
-    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 10px 0;
   }
-  
-  @media (max-width: 992px) {
-    footer {
-      padding: 15px 0;
-    }
-  
-    footer p {
-      font-size: 0.9rem;
-    }
-  
-    footer a {
-      font-size: 0.9rem;
-    }
+
+  footer p {
+    font-size: 0.85rem;
   }
-  
-  @media (max-width: 768px) {
-    footer {
-      padding: 10px 0;
-    }
-  
-    footer p {
-      font-size: 0.85rem;
-    }
-  
-    footer a {
-      font-size: 0.85rem;
-    }
+
+  footer a {
+    font-size: 0.85rem;
   }
-  
-  @media (max-width: 576px) {
-    footer {
-      padding: 5px 0;
-    }
-  
-    footer p {
-      font-size: 0.8rem;
-    }
-  
-    footer a {
-      font-size: 0.8rem;
-    }
+}
+
+@media (max-width: 576px) {
+  footer {
+    padding: 5px 0;
   }
-  
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  footer a {
+    font-size: 0.8rem;
+  }
+}

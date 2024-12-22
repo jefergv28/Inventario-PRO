@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Stock - InventarioPRO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/panel/css/stock.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h2>Control de Stock - InventarioPRO</h2>
+
+    <!-- Leyenda explicativa sobre el control de stock -->
+    <div class="alert alert-info" role="alert">
+      <strong>Instrucciones:</strong> 
+      Para utilizar el sistema de control de stock, por favor agregue los productos con su nombre y el límite mínimo de cantidad de stock. 
+      Cuando el stock actual llegue a este límite, el sistema le notificará para reabastecer el producto.
+    </div>
+
+    <!-- Formulario para agregar productos y límites de stock -->
+    <form id="stockForm">
+      <div class="mb-3">
+        <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+        <input type="text" class="form-control" id="nombreProducto" >
+      </div>
+      <div class="mb-3">
+        <label for="limiteStock" class="form-label">Límite de Cantidad Baja</label>
+        <input type="number" class="form-control" id="limiteStock" >
+      </div>
+      <button type="submit" class="btn btn-primary">Agregar Producto</button>
+      <div id="formStatus" class="mt-3"></div>
+      <img src="/panel/img/alert.svg"  class="alert" alt="alerta">
+    </form>
+
+    <!-- Tabla para mostrar los productos y las alertas de stock -->
+    <h3 class="mt-4">Productos con Alertas de Stock</h3>
+    <div class="alert alert-warning" role="alert">
+      <strong>Alerta:</strong> Cuando el stock actual llegue a la cantidad mínima definida, se generará una alerta para notificar sobre la necesidad de reabastecer el producto.
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Stock Actual</th>
+          <th>Límite de Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="productTable">
+        <!-- Aquí se agregarán las filas dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal de confirmación para alertas -->
+  <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="errorMessage"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts de Bootstrap y JS para manejo de la tabla -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/panel/js/stock.js"></script>
+</body>
+</html>

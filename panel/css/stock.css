@@ -1,0 +1,138 @@
+
+:root {
+    --mainColor: #f29727;
+    --hoverColor: #242526;
+    --color1: #eee9e2;
+    --darkOne: #312f3a;
+    --darkTwo: #45424b;
+    --lightOne: #919199;
+    --lightTwo: #7b7a7c;
+    --lightTre: #f2d6bd;
+    --ligthfor: #192e39;
+    --color-switch-base: #7b7a7c;
+    --color-switch-circilo: #f29727;
+  }
+
+  .dark-mode {
+    --mainColor: #f29727;
+    /* Mantener el color principal si es necesario */
+    --hoverColor: #1b1b1b;
+    /* Un color más oscuro para los efectos hover */
+    --color1: #192e3a;
+    /* Un color oscuro, pero no completamente negro */
+    --darkOne: #2b2b2b;
+    /* Fondo principal oscuro */
+    --darkTwo: #3a3a3a;
+    /* Un tono un poco más claro para secciones */
+    --lightOne: #f2d6bd;
+    /* Un color claro para texto o detalles */
+    --lightTwo: #c7c7c7;
+    /* Un tono más oscuro para detalles menores */
+    --lightTre: #4a5468;
+    /* Un color de acento más oscuro */
+    --ligthfor: #ffffff;
+    /* Tono más oscuro */
+    --color-switch-base: #f2d6bd;
+    --color-switch-circilo: #f29727;
+  }
+/* Estilos personalizados para los formularios y tablas */
+body {
+    background-color: var(--lightTre);
+  }
+  
+  .container {
+    max-width: 800px;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease-in-out;
+    background: var(--lightOne);
+    
+    
+  }
+  form {
+    max-height: 300px;
+  }
+  form .alert{
+    position:relative;
+    top: -300px;
+    left: 370px;
+    width: 400px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .table td, .table th {
+    vertical-align: middle;
+  }
+  
+  .table .btn {
+    margin: 0 5px;
+  }
+  
+  #formStatus {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  #errorModal .modal-content {
+    background-color: var(--lightOne);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.3);
+  }
+  
+  #errorModal .modal-header {
+    border-bottom: 1px solid #f5c6cb;
+  }
+  
+  #errorModal .modal-body {
+    color: #721c24;
+  }
+  
+  .error-button {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .success-button {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  .alert alert-info{
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    color: #007bff;
+  }
+  .mb-3 input{
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.3s ease-in-out;
+    width: 50%;
+  }
+  .mb-3 input:focus{
+    border-color: var(--mainColor);
+    box-shadow: 0 0 0 0.2rem rgba(223, 174, 102, 0.25);
+    outline: none !important;;
+  }
+  .btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--mainColor);
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: var(--hoverColor);
+  }
+ 
+  .btn-danger{
+    background-color: #dc3545;
+    color: #fff;
+  }

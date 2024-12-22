@@ -48,21 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Cargar movimientos de ejemplo al cargar la página
     loadSampleMovements();
   
-    // Función para descargar en PDF
-    document.getElementById('downloadPdfBtn').addEventListener('click', function () {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-  
-      doc.autoTable({
-        head: [['ID', 'Acción', 'Producto/Inventario', 'Fecha', 'Hora']],
-        body: Array.from(document.querySelectorAll('.historial-list tbody tr')).map(row => 
-          Array.from(row.cells).map(cell => cell.textContent)
-        )
-      });
-  
-      doc.save('historial_movimientos.pdf');
-    });
-  
+    
     // Función para descargar en Excel
     document.getElementById('downloadExcelBtn').addEventListener('click', function () {
       const ws = XLSX.utils.table_to_sheet(document.querySelector('.historial-list table'));
