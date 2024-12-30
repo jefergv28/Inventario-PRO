@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${nombreProducto}</td>
-      <td>100</td> <!-- Stock inicial de ejemplo -->
-      <td>${limiteStock}</td>
+      <td>100</td> <td>${limiteStock}</td>
       <td>
         <button class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
         <button class="btn btn-primary"><i class="bi bi-pencil"></i> Editar</button>
@@ -35,9 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     productTable.appendChild(row);
 
-    // Mensaje de éxito
-    formStatus.innerText = 'Producto agregado correctamente.';
-    formStatus.style.color = '#6DBE45';
+    // Crear elemento para el mensaje de éxito
+    const messageElement = document.createElement('span');
+    messageElement.textContent = 'Producto agregado correctamente.';
+    messageElement.classList.add('success-message'); // Agrega una clase CSS para estilos personalizados
+    formStatus.appendChild(messageElement);
+
+    // Ocultar el mensaje automáticamente o al interactuar con el formulario
+    const timeoutId = setTimeout(() => {
+      messageElement.remove();
+    }, 2000);
+
+    form.addEventListener('focus', () => {
+      clearTimeout(timeoutId);
+      messageElement.remove();
+    });
 
     // Limpiar el formulario
     form.reset();
@@ -56,8 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       document.getElementById('nombreProducto').value = nombreProducto;
       document.getElementById('limiteStock').value = limiteStock;
-
       row.remove();
+
+      // Mostrar mensaje de éxito al editar
+      const messageElement = document.createElement('span');
+      messageElement.textContent = 'Editando producto.....';
+      messageElement.classList.add('success-message');
+      formStatus.appendChild(messageElement);
+
+      const timeoutId = setTimeout(() => {
+        messageElement.remove();
+      }, 3000);
+
+      form.addEventListener('focus', () => {
+        clearTimeout(timeoutId);
+        messageElement.remove();
+      });
     }
   });
 });

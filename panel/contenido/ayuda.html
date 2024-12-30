@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda - Soporte</title>
+  <link rel="stylesheet" href="/panel/css/ayuda.css">
+</head>
+<body>
+  <div class="help-container">
+    <h1>Centro de Ayuda</h1>
+
+    <!-- Sección de Preguntas Frecuentes (FAQ) -->
+    <section class="faq">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-item">
+        <button class="faq-question">¿Cómo agregar un producto?</button>
+        <div class="faq-answer">
+          <p>Para agregar un producto, ve a la sección de Inventarios y haz clic en "Agregar Producto". Luego, completa los detalles requeridos.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Cómo puedo ver mis favoritos?</button>
+        <div class="faq-answer">
+          <p>Accede a la sección de "Mis Favoritos" desde el menú principal para ver todos los productos que has marcado como favoritos.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Cómo modificar la cantidad de stock?</button>
+        <div class="faq-answer">
+          <p>En la sección de Inventarios, selecciona un producto y haz clic en "Editar" para modificar la cantidad de stock disponible.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="contact">
+      <h2>¿Tienes alguna otra pregunta?</h2>
+      <form id="contact-form">
+        <label for="name">Tu Nombre:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Tu Correo:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Tu Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="/panel/js/ayuda.js"></script>
+</body>
+</html>

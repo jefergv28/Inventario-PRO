@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuraciones</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/panel/css/config.css">
+</head>
+
+<body>
+
+  <div class="settings-container">
+    <h2>Configuraciones</h2>
+    <form id="settings-form">
+
+      <!-- Foto de Perfil -->
+      <div class="setting">
+        <label for="profile-picture">
+          <i class="fas fa-user-circle"></i> Foto de Perfil
+        </label>
+        <input type="file" id="profile-picture" accept="image/*">
+      </div>
+
+      <!-- Nombre de Usuario -->
+      <div class="setting">
+        <label for="username">
+          <i class="fas fa-user"></i> Nombre de Usuario
+        </label>
+        <input type="text" id="username" placeholder="Nuevo nombre de usuario">
+      </div>
+
+      <!-- Correo Electrónico -->
+      <div class="setting">
+        <label for="email">
+          <i class="fas fa-envelope"></i> Correo Electrónico
+        </label>
+        <input type="email" id="email" placeholder="Nuevo correo electrónico">
+      </div>
+
+      <!-- Cambiar Contraseña -->
+      <div class="setting">
+        <label for="password-change">
+          <i class="fas fa-lock"></i> Cambiar Contraseña
+        </label>
+        <button type="button" id="password-change">Cambiar</button>
+      </div>
+
+      <!-- Guardar Cambios -->
+      <div class="setting">
+        <button type="submit">Guardar Cambios</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Modal para mensajes -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+  <script src="/panel/js/config.js"></script>
+
+</body>
+
+</html>

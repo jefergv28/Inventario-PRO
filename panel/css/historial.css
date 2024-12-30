@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: #f29727;
+  --hoverColor: #242526;
+  --color1: #eee9e2;
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919199;
+  --lightTwo: #7b7a7c;
+  --lightTre: #f2d6bd;
+  --ligthfor: #192e39;
+  --color-switch-base: #7b7a7c;
+  --color-switch-circilo: #f29727;
+}
+
+.dark-mode {
+  --mainColor: #f29727;
+  /* Mantener el color principal si es necesario */
+  --hoverColor: #1b1b1b;
+  /* Un color más oscuro para los efectos hover */
+  --color1: #192e3a;
+  /* Un color oscuro, pero no completamente negro */
+  --darkOne: #2b2b2b;
+  /* Fondo principal oscuro */
+  --darkTwo: #3a3a3a;
+  /* Un tono un poco más claro para secciones */
+  --lightOne: #f2d6bd;
+  /* Un color claro para texto o detalles */
+  --lightTwo: #c7c7c7;
+  /* Un tono más oscuro para detalles menores */
+  --lightTre: #4a5468;
+  /* Un color de acento más oscuro */
+  --ligthfor: #ffffff;
+  /* Tono más oscuro */
+  --color-switch-base: #f2d6bd;
+  --color-switch-circilo: #f29727;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--lightTre);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .historial-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--ligthfor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: var(--mainColor);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color:var(--color1);
+  }
+   
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+  }
+  
+  th {
+    background-color: var(--color1);
+    color: var(--ligthfor);
+  }
+  
+  /* Estilos para el botón */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilos Responsivos */
+  @media (max-width: 970px) {
+    .historial-container {
+      max-width: 800px;
+      padding: 15px;
+    }
+  
+    table {
+      font-size: 14px;
+    }
+  
+    th, td {
+      padding: 8px;
+    }
+  
+    button {
+      padding: 8px 15px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .historial-container {
+      padding: 10px;
+    }
+  
+    table {
+      font-size: 12px;
+    }
+  
+    th, td {
+      padding: 6px;
+    }
+  
+    button {
+      padding: 6px 12px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    /* Ajustar la tabla a pantallas muy pequeñas */
+    table {
+      font-size: 12px;
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    th, td {
+      white-space: nowrap;
+    }
+  }
+  

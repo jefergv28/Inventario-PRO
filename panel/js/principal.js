@@ -121,3 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+// En página1.html o cualquier otro iframe cargado
+showToast('¡Bienvenido a la página 1!', 'success');

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favoritos</title>
+  <link rel="stylesheet" href="/panel/css/favorito.css">
+</head>
+<body>
+  <div class="favoritos-container">
+    <h1>Mis Favoritos</h1>
+    <button id="nueva-lista-btn">Crear Nueva Lista</button>
+    <div class="listas">
+      <!-- Las listas dinámicas se cargarán aquí -->
+    </div>
+  </div>
+
+  <template id="tarjeta-template">
+    <div class="tarjeta">
+      <img src="" alt="Producto">
+      <h3></h3>
+      <button class="eliminar-btn">Eliminar</button>
+    </div>
+  </template>
+
+  <script src="/panel/js/favorito.js"></script>
+</body>
+</html>
